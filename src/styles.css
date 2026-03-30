@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+/* --- FUNDAÇÃO DORfic & VARIÁVEIS DE TEMA --- */
+:root {
+  /* Cores Fixas (Identidade Visual) */
+  --dor-orange: linear-gradient(180deg, #ffb347 0%, #ff8c00 50%, #e67e00 51%, #ff9d23 100%);
+  --dor-green: linear-gradient(180deg, #2ecc71 0%, #27ae60 50%, #1e8449 100%);
+  --dor-header-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.7), 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  /* Variáveis Dinâmicas - MODO ESCURO (Padrão) */
+  --bg-color: #050b1a; 
+  --glass-bg: rgba(30, 30, 40, 0.7);
+  --text-color: #ffffff;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- MODO CLARO --- */
+[data-theme='light'] {
+  --bg-color: #e0e5ec; 
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --text-color: #1a1a1a;
+  --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+/* --- RESET & ESTRUTURA --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; }
+
+/* --- COMPONENTES REUTILIZÁVEIS --- */
+.glass-panel {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.dor-card-header {
+  background: var(--dor-orange) !important;
+  padding: 15px 20px;
+  box-shadow: var(--dor-header-shadow);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  color: white !important;
+}
+
+/*----------------------------------------------------------------
