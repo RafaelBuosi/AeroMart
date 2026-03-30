@@ -1,0 +1,45 @@
+<header class="header-dor">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    
+    <div class="d-flex align-items-center gap-3">
+      <div class="dorfic-icon-bubble">
+        <img src="https://raw.githubusercontent.com/RafaelBuosi/imagesForProjects/refs/heads/main/AeroMartLogo.png" 
+             style="height: 70%; z-index: 2; position: relative;" alt="Logo">
+      </div>
+      <div class="text-white d-none d-sm-block">
+        <h1 class="brand-name mb-0" style="font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px;">
+          AeroMart
+        </h1>
+        <small class="brand-slogan opacity-75 fw-bold" style="font-size: 0.65rem; letter-spacing: 1px;">
+          LOJA DE CONVENIÊNCIA
+        </small>
+      </div>
+    </div>
+
+    <nav class="d-none d-lg-flex gap-2">
+      <a routerLink="/inicio" routerLinkActive="active" class="nav-aero-link">
+        <i class="bi bi-house-door-fill me-1"></i> Início
+      </a>
+      <a routerLink="/gestao-produtos" routerLinkActive="active" class="nav-aero-link">
+        <i class="bi bi-box-seam-fill me-1"></i> Gestão
+      </a>
+      <a routerLink="/relatorios" routerLinkActive="active" class="nav-aero-link">
+        <i class="bi bi-bar-chart-line-fill me-1"></i> Relatórios
+      </a>
+      
+      <a routerLink="/configuracoes" routerLinkActive="active" class="nav-aero-link">
+        <i class="bi bi-gear-fill me-1"></i> Ajustes
+      </a>
+      <a routerLink="/suporte" routerLinkActive="active" class="nav-aero-link">
+        <i class="bi bi-headset me-1"></i> Suporte
+      </a>
+    </nav>
+
+    <div class="d-flex align-items-center gap-3">
+      <button class="theme-toggle-btn" (click)="toggleTheme()" title="Alternar Tema">
+        <i class="bi" [ngClass]="isDarkMode ? 'bi-moon-stars-fill' : 'bi-sun-fill'"></i>
+      </button>
+    </div>
+
+  </div>
+</header>

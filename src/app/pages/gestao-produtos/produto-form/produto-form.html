@@ -1,0 +1,55 @@
+<div class="dorfic-glass-card fade-in">
+  <div class="card-header-aero">
+    <i class="bi" [ngClass]="isEditing ? 'bi-pencil-square' : 'bi-plus-square-fill'"></i>
+    <h2 class="table-text mb-0 h5 fw-bold text-uppercase">
+      {{ isEditing ? 'Editar Produto' : 'Adicionar Novo Item' }}
+    </h2>
+  </div>
+
+  <div class="p-4">
+    <form class="row g-3" #produtoForm="ngForm" (ngSubmit)="salvar()">
+      
+      <div class="col-12">
+        <label class="form-label label-aero">Nome do Produto *</label>
+        <input type="text" name="nome" class="form-control dor-input" 
+               required [(ngModel)]="produto.nome" placeholder="Ex: Pão de Queijo">
+      </div>
+
+      <div class="col-12">
+        <label class="form-label label-aero">Categoria *</label>
+        <select name="categoria" class="form-select dor-input" 
+                required [(ngModel)]="produto.categoria">
+          <option value="" disabled>Selecione...</option>
+          <option value="Bebida">Bebida</option>
+          <option value="Salgado">Salgado</option>
+          <option value="Doce">Doce</option>
+        </select>
+      </div>
+
+      <div class="col-6">
+        <label class="form-label label-aero">Preço (R$)*</label>
+        <input type="number" name="preco" class="form-control dor-input" 
+               required min="0.01" [(ngModel)]="produto.preco" placeholder="0.00">
+      </div>
+
+      <div class="col-6">
+        <label class="form-label label-aero">Estoque *</label>
+        <input type="number" name="estoque" class="form-control dor-input" 
+               required [(ngModel)]="produto.estoque" placeholder="0">
+      </div>
+
+      <div class="col-12 mt-4 d-flex gap-3">
+        <button type="submit" class="btn-aero-primary grow" 
+                [disabled]="!produtoForm.form.valid || !produto.preco || produto.preco <= 0">
+          <i class="bi bi-check2-circle"></i> 
+          {{ isEditing ? 'SALVAR ALTERAÇÕES' : 'CADASTRAR NA LOJA' }}
+        </button>
+        
+        <button type="button" class="btn-aero-cancel grow" 
+                *ngIf="isEditing" (click)="cancelarEdicao()">
+          <i class="bi bi-x-circle"></i> CANCELAR
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

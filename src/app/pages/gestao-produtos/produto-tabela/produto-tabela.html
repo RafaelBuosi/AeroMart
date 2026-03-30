@@ -1,0 +1,48 @@
+<div class="dorfic-glass-card fade-in">
+  <div class="card-header-aero">
+    <i class="bi bi-list-ul"></i>
+    <h2 class="mb-0 h5 fw-bold text-uppercase">ESTOQUE ATUAL</h2>
+    <span class="ms-auto badge rounded-pill bg-dark bg-opacity-25 border border-light border-opacity-25">
+      {{ produtos.length }} {{ produtos.length === 1 ? 'ITEM' : 'ITENS' }}
+    </span>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover mb-0 align-middle">
+      <thead>
+        <tr class="table-light-header">
+          <th class="ps-4 label-aero">PRODUTO / CATEGORIA</th>
+          <th class="label-aero">PREÇO</th>
+          <th class="text-center label-aero">AÇÕES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of produtos">
+          <td class="ps-4 py-3">
+            <div class="fw-bold table-main-text">{{ p.nome }}</div>
+            <small class="table-sub-text">
+              {{ p.categoria }} • <span class="text-warning-dor">{{ p.estoque }} em estoque</span>
+            </small>
+          </td>
+          <td class="table-main-text fw-bold">R$ {{ p.preco | number:'1.2-2' }}</td>
+          <td class="text-center">
+            <div class="d-flex justify-content-center gap-2">
+              <button class="btn-action-edit" (click)="aoEditar(p)">
+                <i class="bi bi-pencil-fill"></i> Editar
+              </button>
+              <button class="btn-action-delete" (click)="aoExcluir(p.id!)">
+                <i class="bi bi-trash3-fill"></i> Excluir
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr *ngIf="produtos.length === 0">
+          <td colspan="3" class="text-center py-4 table-sub-text">
+            Nenhum produto cadastrado no momento.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

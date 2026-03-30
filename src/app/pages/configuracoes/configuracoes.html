@@ -1,0 +1,62 @@
+<div class="main-content-wrapper fade-in">
+  <div class="container-fluid py-4">
+    
+    <div class="d-flex align-items-center gap-2 mb-4">
+      <div class="icon-wrapper-orange">
+        <i class="bi bi-gear-fill"></i>
+      </div>
+      <h2 class="section-title mb-0 h4 fw-bold text-uppercase">
+        CONFIGURAÇÕES DO <span class="text-orange-dor">SISTEMA</span>
+      </h2>
+    </div>
+
+    <div class="row g-4">
+      
+      <div class="col-md-6">
+        <div class="dorfic-glass-card h-100">
+          <div class="card-header-aero">
+            <i class="bi bi-palette-fill"></i>
+            <span class="text-uppercase fw-bold text-white">Aparência e Tema</span>
+          </div>
+          <div class="p-4 d-flex flex-column justify-content-center grow">
+            <p class="aero-description small mb-4">Personalize a interface do AeroMart para o seu conforto visual.</p>
+            
+            <div class="d-grid gap-3 mt-auto">
+              <button class="btn-aero-blue text-start px-3" (click)="toggleTheme('dark')">
+                <i class="bi bi-moon-stars-fill me-2"></i> ATIVAR MODO ESCURO
+              </button>
+              <button class="btn-aero-blue text-start px-3" (click)="toggleTheme('light')">
+                <i class="bi bi-sun-fill me-2"></i> ATIVAR MODO CLARO
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dorfic-glass-card h-100">
+          <div class="card-header-aero">
+            <i class="bi bi-shield-lock-fill"></i>
+            <span class="text-uppercase fw-bold text-white">Segurança da Conta</span>
+          </div>
+          <div class="p-4 d-flex flex-column justify-content-center grow">
+            <p class="aero-description small mb-4">Gerencie suas credenciais e proteja seus dados de administrador.</p>
+            
+            <div class="d-grid gap-2 mt-auto">
+              <button class="btn-aero-blue text-start px-3">
+                <i class="bi bi-person-badge-fill me-2"></i> PERFIL DO USUÁRIO
+              </button>
+              <button class="btn-aero-blue text-start px-3">
+                <i class="bi bi-key-fill me-2"></i> ALTERAR SENHA
+              </button>
+              <button class="btn-aero-blue text-start px-3 border-danger-aero">
+                <i class="bi bi-box-arrow-right me-2"></i> SAIR DO SISTEMA
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
